@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "centos/7"
+
+    config.vm.define "poodle" do |machine|
+        machine.vm.hostname = "poodle"
+        machine.vm.network "public_network", ip: "192.168.2.51"
+        machine.vm.network "public_network", bridge: "en1: Wi-Fi (AirPort)"
+
+    end
+
+
+end
